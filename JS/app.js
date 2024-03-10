@@ -41,15 +41,50 @@ divSliderElement.append(divElementItemsContainer);
 //console.log(itemsContent);
 //console.log(divSliderElement);
 
-//recupera tutti elementi item con getElementsByClassName -> diventa un simil array
+//recuperare tutti elementi item con getElementsByClassName -> diventa un simil array
 let itemsArray = document.getElementsByClassName("item");
 //console.log(itemsArray);
 
-//dichiara active item = 0
+//dichiarare active item = 0
 let activeItem = 0;
 
-//dai classe "active" ad active item in indice di elementi item (quindi il primo item)
+//dare classe "active" ad active item in indice di elementi item (quindi il primo item)
 itemsArray[activeItem].classList.add("active");
+
+//recuperare bottoni prev e next
+let nextButtonElement = document.querySelector(".next");
+let prevButtonElement = document.querySelector(".prev");
+
+//aggiungere eventListener al click del bottone next:
+nextButtonElement.addEventListener ("click", function(){
+
+    //classe active viene rimossa, item active si sposta in avanti di uno, classe active viene rimessa
+    itemsArray[activeItem].classList.remove("active");
+
+    activeItem++;
+
+    itemsArray[activeItem].classList.add("active");
+
+})
+
+//aggiungere eventListener al click del bottone prev:
+prevButtonElement.addEventListener ("click", function(){
+
+    //stessa cosa eccetto che item active si sposta indietro di uno
+    itemsArray[activeItem].classList.remove("active");
+
+    activeItem--;
+    
+    itemsArray[activeItem].classList.add("active");
+
+})
+
+
+
+
+
+
+
 
 
 

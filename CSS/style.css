@@ -40,12 +40,12 @@ img {
     z-index: 1;
 }
 
-.button.prev {
+.button.next {
     left: 50%;
     bottom: 220px;
 }
 
-.button.next {
+.button.prev {
     left: 50%;
     top: 210px;
 }
