@@ -61,7 +61,15 @@ nextButtonElement.addEventListener ("click", function(){
     //classe active viene rimossa, item active si sposta in avanti di uno, classe active viene rimessa
     itemsArray[activeItem].classList.remove("active");
 
-    activeItem++;
+    //se l'elemento attivo è l'ultimo, allora si torna alla posizione 0
+    if (activeItem === itemsArray.length - 1) {
+
+        activeItem = 0;
+
+    } else {
+
+        activeItem++;
+    }
 
     itemsArray[activeItem].classList.add("active");
 
@@ -73,7 +81,16 @@ prevButtonElement.addEventListener ("click", function(){
     //stessa cosa eccetto che item active si sposta indietro di uno
     itemsArray[activeItem].classList.remove("active");
 
-    activeItem--;
+    //se l'elemento attivo è il primo, allora si va all'ultimo
+    if (activeItem === 0) {
+
+        activeItem = itemsArray.length - 1;
+
+    } else {
+
+        activeItem--;
+        
+    }
     
     itemsArray[activeItem].classList.add("active");
 
